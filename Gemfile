@@ -14,6 +14,8 @@ gem 'foundation-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'rmagick'
+gem 'carrierwave'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -21,11 +23,13 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'rails-erd'
 end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 group :production do
   gem 'rails_12factor'
