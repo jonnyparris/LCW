@@ -9,6 +9,7 @@ RSpec.describe Venue, :type => :model do
     it { should respond_to(:website) }
     it { should respond_to(:contact_details) }
     it { should respond_to(:size_details) }
+    xit { should respond_to(:images) }
   end
 
   xdescribe "associations" do
