@@ -24,6 +24,9 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'rails-erd'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
 end
 group :development, :test do
   gem 'factory_girl_rails'
