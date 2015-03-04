@@ -1,4 +1,4 @@
-<%= simple_form_for(@venue) do |f| %>
+<%= simple_form_for @venue, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,6 +9,7 @@
     <%= f.input :description %>
     <%= f.input :size_details %>
     <%= f.input :directions %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
 
   <div class="form-actions">

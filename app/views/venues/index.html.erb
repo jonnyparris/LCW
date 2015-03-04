@@ -15,6 +15,7 @@
         <tr>
           <td>
             <h3><%= venue.name %></h3>
+            <%= image_tag(venue.photos.first.url) if venue.photos? %>
           </td>
           <td><%= link_to 'Show', venue %></td>
           <td><%= link_to 'Edit', edit_venue_path(venue) %></td>

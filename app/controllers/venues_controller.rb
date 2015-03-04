@@ -48,6 +48,7 @@ class VenuesController < ApplicationController
                             :directions,
                             :website,
                             :contact_details,
-                            :size_details)
+                            :size_details,
+                            :photos => [])
     end
 end
