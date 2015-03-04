@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<h4><%= @vendor.name %></h4>
+<%= image_tag(@vendor.photos.first.url) if @vendor.photos? %>
+
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>
