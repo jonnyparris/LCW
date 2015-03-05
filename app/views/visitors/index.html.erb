@@ -1,2 +1,30 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<div class="small-centered columns" id="welcome-text">
+  <h1>Welcome to Loudon County Weddings</h1>
+  <h3 class="subheader">Your guide to all local wedding resources in the gorgeous Loudon County</h3>
+</div>
+
+<div class="large-12 columns transparent">
+  <aside class="large-3 panel columns" id="filters-box">
+    <ul>
+      <li>Venues</li>
+      <li>Flowers</li>
+      <li>Caterers</li>
+    </ul>
+
+    <div class="common-filters">
+      <ul>
+          <li>price filter</li>
+          <li>size filter</li>
+          <li>disabled access checkbox</li>
+          <li>child friendly</li>
+      </ul>
+    </div>
+  </aside>
+
+  <article class="large-9 columns panel">
+    <%= render @venues %>
+    <%= render @vendors %>
+    <p><%= Faker::Lorem.paragraphs(70) %></p>
+  </article>
+
+</div>

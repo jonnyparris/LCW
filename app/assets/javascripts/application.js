@@ -17,4 +17,14 @@
 //= require_tree .
 $(function() {
   $(document).foundation();
+
+  $('.sneaky-bar').hide();
+
+  $(window).scroll(function() {
+       if($(window).scrollTop() >= 10) {
+         $('.sneaky-bar').fadeIn('slow');
+       }else{
+         $('.sneaky-bar').fadeOut('fast');
+       }
+     });
 });

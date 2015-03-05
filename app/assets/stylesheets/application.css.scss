@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url('http://www.washingtonpost.com/wp-apps/imrs.php?src=http://img.washingtonpost.com/blogs/capital-weather-gang/files/2013/09/late_aug_lake_rok20147.jpg&w=1484');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#filters-box {
+  position: fixed;
+}
+
+.merchant-thumbnail img {
+  height: 200px;
+  width: 200px;
+}
+.translucent {
+  background-color: rgba(100,100,100,0.4);
+}
+
+#welcome-text {
+  font-family: 'Tangerine', cursive;
+}

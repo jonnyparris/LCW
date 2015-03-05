@@ -1,0 +1,18 @@
+<h4><%= link_to(vendor.name, vendor_path(vendor)) %></h5>
+<div class="columns">
+  <div class="large-4 column merchant-thumbnail">
+    <% if vendor.photos? %>
+        <%= image_tag(vendor.photos.last.thumb.url) %>
+    <% else %>
+        <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Z-sl7HLU7OJZ30S5FuNzC8sxYoWL9acyHQU0koc32SJv0qwB5Q") %>
+    <% end %>
+  </div>
+  <ul class="large-7 column">
+    <% vendor.attributes.each do |attribute| %>
+      <% if attribute[1] != "" %>
+        <li><%= "#{attribute[0]}: #{attribute[1]}" %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<hr>
