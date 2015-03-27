@@ -6,19 +6,19 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Lcw" %>">
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Tangerine' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <div class="row translucent">
-      <header>
-      </header>
       <main role="main">
          <%= render 'layouts/messages' %>
          <%= yield %>
       </main>
     </div>
+      <footer class="footer row">
+        <%= render 'layouts/footer' %>
+      </footer>
   </body>
 </html>
