@@ -11,9 +11,9 @@ RSpec.describe Vendor, :type => :model do
     it { should respond_to(:photos) }
   end
 
-  xdescribe "associations" do
-    it { should belong_to(:user) }
-    it { should have_many(:preferred_venues).class_name('Venue') }
+  describe "associations" do
+    it { should have_and_belong_to_many(:preferred_venues).class_name('Venue') }
+    xit { should belong_to(:user) }
   end
 
   describe "validations" do
