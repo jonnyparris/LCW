@@ -6,8 +6,13 @@
 <div class="transparent">
   <aside class="large-2 columns nopadding-right">
     <ul class="side-nav">
-      <li class="text-right"><%= link_to("Venues", "#", class: "button") %></li>
-      <li class="text-right"><%= link_to("Vendors", "#", class: "button") %></li>
+      <% if user_signed_in? %>
+        <li class="text-right"><%= link_to 'Add Venue', new_venue_path, class: "button" %></li>
+        <li class="text-right"><%= link_to 'Add Vendor', new_vendor_path, class: "button" %></li>
+      <% else %>
+        <li class="text-right"><%= link_to("Venues", "#", class: "button") %></li>
+        <li class="text-right"><%= link_to("Vendors", "#", class: "button") %></li>
+      <% end %>
       <li class="text-right">
         <div class="switch large">
           <input id="mapSwitch" type="checkbox">
