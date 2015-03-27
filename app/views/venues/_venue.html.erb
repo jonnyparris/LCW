@@ -2,9 +2,9 @@
 <div class="columns">
   <div class="large-4 column merchant-thumbnail">
     <% if venue.photos? %>
-        <%= image_tag(venue.photos.last.thumb.url) %>
+        <%= link_to(image_tag(venue.photos.last.thumb.url), venue_path(venue)) %>
     <% else %>
-        <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd") %>
+        <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd"), venue_path(venue)) %>
     <% end %>
   </div>
   <ul class="large-7 column">
