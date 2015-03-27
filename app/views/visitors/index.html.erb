@@ -10,8 +10,8 @@
       <li class="text-right"><%= link_to("Vendors", "#", class: "button") %></li>
       <li class="text-right">
         <div class="switch large">
-          <input id="on-off" type="checkbox">
-            <label for="on-off">
+          <input id="mapSwitch" type="checkbox">
+            <label for="mapSwitch">
               <span class="switch-on">MAP</span>
               <span class="switch-off">LIST</span>
           </label>
@@ -19,13 +19,51 @@
       </li>
     </ul>
     <div class="panel common-filters">
-      <ul>
-
-          <li>price filter</li>
-          <li>size filter</li>
-          <li>disabled access checkbox</li>
-          <li>child friendly</li>
+      <ul class="no-bullet">
+          <li>
+            Max: $
+            <span id="priceOutput"></span>
+            <div class="range-slider" data-slider data-options="start: 1; end: 1000; display_selector: #priceOutput;">
+              <span class="range-slider-handle" role="slider" tabindex="0"></span>
+              <span class="range-slider-active-segment"></span>
+              <input type="hidden">
+            </div>
+          </li>
+          <li>
+            <span id="capacityOutput"></span>
+            People
+            <div class="range-slider" data-slider data-options="start: 10; end: 500; display_selector: #capacityOutput;">
+              <span class="range-slider-handle" role="slider" tabindex="0"></span>
+              <span class="range-slider-active-segment"></span>
+              <input type="hidden">
+            </div>
+          </li>
+          <li class="text-center">
+            Disabled access?
+            <div class="switch tiny">
+              <input id="disabledSwitch" type="checkbox">
+              <label for="disabledSwitch">
+                <span class="tiny-switch-on">Yes</span>
+                <span class="tiny-switch-off">No</span>
+              </label>
+            </div>
+          </li>
+          <li class="text-center">
+            Child friendly?
+            <div class="switch tiny">
+              <input id="childSwitch" type="checkbox">
+              <label for="childSwitch">
+                <span class="tiny-switch-on">Yes</span>
+                <span class="tiny-switch-off">No</span>
+              </label>
+            </div>
+          </li>
       </ul>
+      <div class="text-center">
+        <button class="small">
+          Filter
+        </button>
+      </div>
     </div>
   </aside>
 

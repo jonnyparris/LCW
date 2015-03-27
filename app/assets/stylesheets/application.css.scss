@@ -54,6 +54,24 @@ aside.nopadding-right {
   font-size: 14px;
 }
 
+.tiny-switch-on {
+  position: absolute;
+  left: -44px;
+  top: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 8px;
+}
+
+.tiny-switch-off {
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 9px;
+}
+
 article.scrollable {
   max-height: 740px;
   overflow: auto;
