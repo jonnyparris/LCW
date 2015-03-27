@@ -36,6 +36,24 @@ aside.nopadding-right {
   padding-right: 0;
 }
 
+.switch-on {
+  position: absolute;
+  left: -75.1px;
+  top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.switch-off {
+  position: absolute;
+  left: -34px;
+  top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 article.scrollable {
   max-height: 740px;
   overflow: auto;

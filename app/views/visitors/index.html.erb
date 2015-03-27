@@ -8,10 +8,19 @@
     <ul class="side-nav">
       <li class="text-right"><%= link_to("Venues", "#", class: "button") %></li>
       <li class="text-right"><%= link_to("Vendors", "#", class: "button") %></li>
-      <li class="text-right"><%= link_to("Services", "#", class: "button") %></li>
+      <li class="text-right">
+        <div class="switch large">
+          <input id="on-off" type="checkbox">
+            <label for="on-off">
+              <span class="switch-on">MAP</span>
+              <span class="switch-off">LIST</span>
+          </label>
+        </div>
+      </li>
     </ul>
     <div class="panel common-filters">
       <ul>
+
           <li>price filter</li>
           <li>size filter</li>
           <li>disabled access checkbox</li>
