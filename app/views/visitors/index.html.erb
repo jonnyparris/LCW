@@ -3,15 +3,14 @@
   <h3 class="subheader">Your guide to all local wedding resources in the gorgeous Loudon County</h3>
 </div>
 
-<div class="large-12 columns transparent">
-  <aside class="large-3 panel columns" id="filters-box">
-    <ul>
-      <li>Venues</li>
-      <li>Flowers</li>
-      <li>Caterers</li>
+<div class="transparent">
+  <aside class="large-2 columns nopadding-right">
+    <ul class="side-nav">
+      <li class="text-right"><%= link_to("Venues", "#", class: "button") %></li>
+      <li class="text-right"><%= link_to("Vendors", "#", class: "button") %></li>
+      <li class="text-right"><%= link_to("Services", "#", class: "button") %></li>
     </ul>
-
-    <div class="common-filters">
+    <div class="panel common-filters">
       <ul>
           <li>price filter</li>
           <li>size filter</li>
@@ -21,10 +20,9 @@
     </div>
   </aside>
 
-  <article class="large-9 columns panel">
+  <article class="large-10 columns panel scrollable">
     <%= render @venues %>
     <%= render @vendors %>
-    <p><%= Faker::Lorem.paragraphs(70) %></p>
   </article>
 
 </div>
