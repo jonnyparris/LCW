@@ -1,0 +1,18 @@
+<h4><%= link_to(venue.name, venue_path(venue)) %></h5>
+<div class="columns">
+  <div class="large-4 column merchant-thumbnail">
+    <% if venue.photos? %>
+        <%= image_tag(venue.photos.last.thumb.url) %>
+    <% else %>
+        <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd") %>
+    <% end %>
+  </div>
+  <ul class="large-7 column">
+    <% venue.attributes.each do |attribute| %>
+      <% if attribute[1] != "" %>
+        <li><%= "#{attribute[0]}: #{attribute[1]}" %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<hr>

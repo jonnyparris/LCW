@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.5'
 gem 'rails', '4.1.5'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -14,6 +14,8 @@ gem 'foundation-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'rmagick'
+gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git', :branch => 'master'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -21,11 +23,16 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'rails-erd'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
 end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 group :production do
   gem 'rails_12factor'

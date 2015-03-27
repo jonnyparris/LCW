@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h4><%= @venue.name %></h4>
+<%= image_tag(@venue.photos.first.url) if @venue.photos? %>
+<ul >
+  <% @venue.attributes.each do |attribute| %>
+    <% if attribute[1] != "" %>
+      <li><%= "#{attribute[0]}: #{attribute[1]}" %></li>
+    <% end %>
+  <% end %>
+</ul><%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>
