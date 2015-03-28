@@ -37,7 +37,6 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
-  gem 'sprockets_better_errors'
 end
 group :test do
   gem 'capybara'
