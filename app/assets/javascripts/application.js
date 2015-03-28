@@ -12,20 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation/foundation
 //= require foundation
 //= require turbolinks
 //= require_tree .
-$(function() {
+
+var ready;
+ready = function() {
   $(document).foundation();
-  console.log('asset pipeline test');
-
-  $('.sneaky-bar').hide();
-
-  $(window).scroll(function() {
-       if($(window).scrollTop() >= 10) {
-         $('.sneaky-bar').fadeIn('slow');
-       }else{
-         $('.sneaky-bar').fadeOut('fast');
-       }
-     });
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);
