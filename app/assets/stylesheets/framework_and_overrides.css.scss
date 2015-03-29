@@ -1,14 +1,21 @@
 // import the CSS framework
 @import "foundation";
 
-// override for the 'Home' navigation link
-.top-bar .name {
-  font-size: rem-calc(13);
-  line-height: 45px; }
-.top-bar .name a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px; }
+.left-side-panel {
+  @include radius;
+  @media #{$large-up} {
+    border-top-left-radius: $global-radius;
+    border-bottom-left-radius: $global-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+aside.nopadding-right {
+  @media #{$large-up} {
+    padding-right: 0;
+  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -45,6 +52,14 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+button {
+  @extend .button;
+  @include radius;
+}
+// .button {
+//   @extend .button;
+//   @include radius;
+// }
 
 // Styles for form views
 // using Foundation
