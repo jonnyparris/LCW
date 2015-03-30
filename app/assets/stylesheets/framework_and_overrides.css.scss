@@ -1,6 +1,6 @@
-// import the CSS framework
 @import "foundation";
 
+// Side filter buttons responsiveness
 .left-side-panel {
   @include radius;
   @media #{$large-up} {
@@ -17,8 +17,32 @@ aside.nopadding-right {
   }
 }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create mixins using Foundation classes
+// Switches with labels
+@mixin switch-basics($left-pos, $top-pos: 10px, $text-size: 14px) {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  left: $left-pos;
+  top: $top-pos;
+  font-size: $text-size;
+}
+.switch-on {
+  @include switch-basics(-75.1px);
+}
+
+.switch-off {
+  @include switch-basics(-34px);
+}
+
+.tiny-switch-on {
+  @include switch-basics(-44px, 5px, 8px);
+}
+
+.tiny-switch-off {
+  @include switch-basics(-20px, 5px, 9px);
+}
+
+// Baseline foundation styles
 @mixin twelve-columns {
   @extend .small-12;
   @extend .columns;
@@ -28,8 +52,6 @@ aside.nopadding-right {
   @extend .columns;
   @extend .text-center;
   }
-// create your own classes
-// to make views framework-neutral
 .column {
   @include six-columns-centered;
   }
@@ -43,8 +65,6 @@ aside.nopadding-right {
   @extend .button;
   @extend .radius;
   }
-// apply styles to HTML elements
-// to make views framework-neutral
 main {
   @include twelve-columns;
   }
@@ -52,14 +72,6 @@ section {
   @extend .row;
   margin-top: 20px;
   }
-button {
-  @extend .button;
-  @include radius;
-}
-// .button {
-//   @extend .button;
-//   @include radius;
-// }
 
 // Styles for form views
 // using Foundation

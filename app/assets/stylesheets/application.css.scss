@@ -34,42 +34,6 @@ body {
   font-family: 'Tangerine', cursive;
 }
 
-.switch-on {
-  position: absolute;
-  left: -75.1px;
-  top: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.switch-off {
-  position: absolute;
-  left: -34px;
-  top: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.tiny-switch-on {
-  position: absolute;
-  left: -44px;
-  top: 5px;
-  color: white;
-  font-weight: bold;
-  font-size: 8px;
-}
-
-.tiny-switch-off {
-  position: absolute;
-  left: -20px;
-  top: 5px;
-  color: white;
-  font-weight: bold;
-  font-size: 9px;
-}
-
 article.scrollable {
   max-height: 740px;
   overflow: auto;
