@@ -1,10 +1,15 @@
+@import "foundation_and_overrides";
 @import "foundation";
 
 h1 {
   font-family: 'Tangerine', cursive;
   font-size: $h1-font-size*2;
+  color: $primary-color;
 }
 
+.translucent {
+  background-color: $translucent;
+}
 // Side filter buttons responsiveness
 .left-side-panel {
   @include radius;

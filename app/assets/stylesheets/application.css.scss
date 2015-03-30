@@ -11,7 +11,6 @@
  * file per style scope.
  *
  *= require_tree .
- *= require foundation_and_overrides
  *= require_self
 
  */
@@ -25,9 +24,6 @@ body {
 .merchant-thumbnail img {
   height: 200px;
   width: 200px;
-}
-.translucent {
-  background-color: rgba(100,100,100,0.4);
 }
 
 article.scrollable {
