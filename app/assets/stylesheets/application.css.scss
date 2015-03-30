@@ -11,8 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require foundation_and_overrides
+ *= require_self
 
  */
 
@@ -28,10 +28,6 @@ body {
 }
 .translucent {
   background-color: rgba(100,100,100,0.4);
-}
-
-#welcome-text {
-  font-family: 'Tangerine', cursive;
 }
 
 article.scrollable {
