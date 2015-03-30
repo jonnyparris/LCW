@@ -145,7 +145,7 @@ $primary-color: #1681CA;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
-// $global-radius: 4.5px;
+$global-radius: 4.5px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -1469,5 +1469,3 @@ $panel-bg: $white;
 // $include-accessibility-classes: true;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
-
-// @import 'foundation';
