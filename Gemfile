@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'fog'
 gem 'rmagick'
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git', :branch => 'master'
 group :development do
