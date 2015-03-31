@@ -10,7 +10,7 @@
     <h4><%= link_to(venue.name, venue_path(venue)) %></h4>
     <p><%= venue.contact_details if venue.contact_details? %></p>
     <% if venue.website? %>
-            <p><%= link_to("visit website", venue.website, target: "_blank") %></p>
+            <p><%= link_to("visit website", "#{venue.website}", target: "_blank") %></p>
     <% end %>
     <p><%= venue.description if venue.description? %></p>
     <p><%= venue.pricing if venue.pricing? %></p>
