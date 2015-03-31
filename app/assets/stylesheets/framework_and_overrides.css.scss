@@ -51,7 +51,7 @@ div.common-filters {
   font-size: $text-size;
 }
 .switch-on {
-  @include switch-basics(-72.1px);
+  @include switch-basics(-76.7px, 10px, 13.7px);
 }
 
 .switch-off {
