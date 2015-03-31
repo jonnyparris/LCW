@@ -1,5 +1,4 @@
-<h4><%= link_to(venue.name, venue_path(venue)) %></h5>
-<div class="columns">
+<div class="columns chunk">
   <div class="large-4 column merchant-thumbnail">
     <% if venue.photos? %>
         <%= link_to(image_tag(venue.photos.last.thumb.url), venue_path(venue)) %>
@@ -7,12 +6,15 @@
         <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd"), venue_path(venue)) %>
     <% end %>
   </div>
-  <ul class="large-7 column no-bullet">
-    <% venue.attributes.each do |attribute| %>
-      <% if attribute[1] != "" %>
-        <li><%= "#{attribute[0]}: #{attribute[1]}" %></li>
-      <% end %>
+  <div class="large-8 columns details-darling">
+    <h4><%= link_to(venue.name, venue_path(venue)) %></h4>
+    <p><%= venue.contact_details if venue.contact_details? %></p>
+    <% if venue.website? %>
+            <p><%= link_to("visit website", venue.website, target: "_blank") %></p>
     <% end %>
-  </ul>
+    <p><%= venue.description if venue.description? %></p>
+    <p><%= venue.pricing if venue.pricing? %></p>
+    <p><%= venue.size_details if venue.size_details? %></p>
+  </div>
 </div>
 <hr>
