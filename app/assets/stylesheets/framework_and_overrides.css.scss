@@ -37,7 +37,7 @@ aside.nopadding-right {
   font-size: $text-size;
 }
 .switch-on {
-  @include switch-basics(-75.1px);
+  @include switch-basics(-72.1px);
 }
 
 .switch-off {
@@ -70,10 +70,6 @@ aside.nopadding-right {
   }
 .form-centered {
   @include six-columns-centered;
-  }
-.submit {
-  @extend .button;
-  @extend .radius;
   }
 main {
   @include twelve-columns;
