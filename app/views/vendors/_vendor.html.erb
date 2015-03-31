@@ -6,15 +6,20 @@
       <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Z-sl7HLU7OJZ30S5FuNzC8sxYoWL9acyHQU0koc32SJv0qwB5Q"), vendor_path(vendor)) %>
     <% end %>
   </div>
-  <div class="large-8 columns details-darling">
+  <div class="large-8 columns details-darling vcard-rad">
     <h4><%= link_to(vendor.name, vendor_path(vendor)) %></h4>
-    <p><%= "Contact: #{vendor.contact_details}" if vendor.contact_details? %></p>
-    <% if vendor.website? %>
-        <p><%= link_to("website", "#{vendor.website}", target: "_blank") %></p>
-    <% end %>
-    <p><%= vendor.description if vendor.description? %></p>
-    <p><%= vendor.services if vendor.services? %></p>
-    <p><%= "Pricing: #{vendor.pricing}" if vendor.pricing? %></p>
+    <ul>
+      <% if vendor.description? %>
+        <li><%= vendor.description %></li>
+        <br>
+      <% end %>
+      <li><%= vendor.services if vendor.services? %></li>
+      <li><%= "Pricing: #{vendor.pricing}" if vendor.pricing? %></li>
+      <li><%= "Contact: #{vendor.contact_details}" if vendor.contact_details? %></li>
+      <% if vendor.website? %>
+          <li><%= link_to("website", "#{vendor.website}", target: "_blank") %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 <hr>
