@@ -16,6 +16,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'fog'
 gem 'rmagick'
+gem 'figaro'
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git', :branch => 'master'
 group :development do
   gem 'better_errors'
