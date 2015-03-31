@@ -31,9 +31,12 @@ h1 {
   font-size: $h1-font-size*2;
   color: $white;
 }
-
+.vcard-rad{
+  @extend .vcard;
+  border: none;
+}
 .details-darling > h4 {
-  margin-top: 0.4em;
+  // margin-top: 0.4em;
 }
 
 .translucent {
@@ -85,6 +88,9 @@ div.common-filters {
   color: $white;
   @media #{$large-up} {
     border-right: 0;
+  }
+  li {
+    font-size: 0.8rem;
   }
 }
 

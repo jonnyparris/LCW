@@ -8,13 +8,13 @@
   </div>
   <div class="large-8 columns details-darling">
     <h4><%= link_to(vendor.name, vendor_path(vendor)) %></h4>
-    <p><%= vendor.contact_details if vendor.contact_details? %></p>
+    <p><%= "Contact: #{vendor.contact_details}" if vendor.contact_details? %></p>
     <% if vendor.website? %>
-        <p><%= link_to("website", vendor.website, target: "_blank") %></p>
+        <p><%= link_to("website", "#{vendor.website}", target: "_blank") %></p>
     <% end %>
     <p><%= vendor.description if vendor.description? %></p>
     <p><%= vendor.services if vendor.services? %></p>
-    <p><%= vendor.pricing if vendor.pricing? %></p>
+    <p><%= "Pricing: #{vendor.pricing}" if vendor.pricing? %></p>
   </div>
 </div>
 <hr>
