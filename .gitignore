@@ -80,3 +80,6 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+#ignore kitchen sink html
+/app/views/visitors/kitchen.html.erb
