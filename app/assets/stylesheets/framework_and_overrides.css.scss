@@ -27,6 +27,20 @@ aside.nopadding-right {
   }
 }
 
+.left-border {
+  border-left: 1px solid #CCCCCC;
+}
+
+div.common-filters {
+  @include radius;
+  padding: rem-calc(20);
+  border: 1px solid #CCCCCC;
+  color: $white;
+  @media #{$large-up} {
+    border-right: 0;
+  }
+}
+
 // Switches with labels
 @mixin switch-basics($left-pos, $top-pos: 10px, $text-size: 14px) {
   position: absolute;

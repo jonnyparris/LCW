@@ -23,7 +23,7 @@
         </div>
       </li>
     </ul>
-    <div class="panel common-filters left-side-panel">
+    <div class="common-filters left-side-panel">
       <ul class="no-bullet">
           <li>
             Max: $
@@ -65,14 +65,14 @@
           </li>
       </ul>
       <div class="text-center">
-        <button class="radius">
+        <button class="button radius">
           Update Filter
         </button>
       </div>
     </div>
   </aside>
 
-  <article class="large-10 columns panel scrollable radius">
+  <article class="left-border large-10 columns scrollable radius">
     <%= render @venues unless @venues.nil? %>
     <%= render @vendors unless @vendors.nil? %>
   </article>

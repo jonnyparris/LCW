@@ -100,13 +100,13 @@ $font-family-serif: "EB Garamond", Cambria, "Times New Roman", Times, serif;
 // $font-weight-bold: bold;
 
 $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
+$ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
@@ -119,11 +119,12 @@ $white       : #FFFFFF;
 // $jet         : #222222;
 // $black       : #000000;
 $translucent    : rgba(255,255,255,0.3);
+$transparent   : rgba(255,255,255,0);
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
 $primary-color: #1681CA;
-// $secondary-color: #e7e7e7;
+$secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -463,7 +464,9 @@ $button-lrg: rem-calc(9);
 // $button-border-width: 0;
 // $button-border-style: solid;
 // $button-bg-color: $primary-color;
+$button-bg-color: rgba($primary-color, 0.7);
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-hover: scale-color($button-bg-color, $alpha: 100%);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -979,7 +982,6 @@ $button-lrg: rem-calc(9);
 
 // We use these to control the background and border styles
 // $panel-bg: scale-color($white, $lightness: -5%);
-$panel-bg: $white;
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1084,6 +1086,7 @@ $panel-bg: $white;
 // These variabels define the slider bar styles
 // $range-slider-bar-width: 100%;
 // $range-slider-bar-height: rem-calc(16);
+$range-slider-bar-height: rem-calc(10);
 
 // $range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
@@ -1091,7 +1094,9 @@ $panel-bg: $white;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
 // $range-slider-bar-bg-color: $ghost;
+$range-slider-bar-bg-color: rgba($ghost, 0.7);
 // $range-slider-active-segment-bg-color: scale-color($secondary-color, $lightness: -1%);
+$range-slider-active-segment-bg-color: scale-color($secondary-color, $lightness: -3%);
 
 // Vertical bar styles
 // $range-slider-vertical-bar-width: rem-calc(16);
@@ -1102,12 +1107,14 @@ $panel-bg: $white;
 // $range-slider-handle-height: rem-calc(22);
 // $range-slider-handle-position-top: rem-calc(-5);
 // $range-slider-handle-bg-color: $primary-color;
+$range-slider-handle-bg-color: $button-bg-color;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
 // $range-slider-handle-border-color: none;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
+$range-slider-handle-bg-hover-color: scale-color($button-bg-color, $alpha: 100%);
 // $range-slider-handle-cursor: pointer;
 
 // $range-slider-disabled-opacity: 0.7;
@@ -1264,6 +1271,7 @@ $panel-bg: $white;
 
 // Controlling background color for the switch container
 // $switch-bg: $gainsboro;
+$switch-bg: rgba($gainsboro, 0.35);
 
 // We use these to control the switch heights for our default classes
 // $switch-height-tny: 1.5rem;
@@ -1275,8 +1283,10 @@ $panel-bg: $white;
 // We use these to style the switch-paddle
 // $switch-paddle-bg: $white;
 // $switch-paddle-transition-speed: .15s;
+$switch-paddle-transition-speed: .10s;
 // $switch-paddle-transition-ease: ease-out;
 // $switch-active-color: $primary-color;
+$switch-active-color: $button-bg-color;
 
 // 30. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
