@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Lcw" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Lcw" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Loudoun County Weddings" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "local wedding resources in the gorgeous Loudoun County" %>">
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Tangerine' %>
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=EB+Garamond' %>
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Montserrat' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,7 +14,7 @@
   </head>
   <body>
     <div class="row translucent">
-      <main role="main">
+      <main role="main radius">
          <%= render 'layouts/messages' %>
          <%= yield %>
       </main>

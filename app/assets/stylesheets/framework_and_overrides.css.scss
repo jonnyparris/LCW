@@ -1,17 +1,119 @@
-// import the CSS framework
+@import "foundation_and_overrides";
 @import "foundation";
 
-// override for the 'Home' navigation link
-.top-bar .name {
-  font-size: rem-calc(13);
-  line-height: 45px; }
-.top-bar .name a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px; }
+body {
+  background-image: url('http://static1.squarespace.com/static/5399d450e4b0d829ba56356f/t/53a1af14e4b01c7e0c03c8e8/1403105054454/virginiawinecountry.jpg?format=1484w');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create mixins using Foundation classes
+.merchant-thumbnail img {
+  @include thumb($border-width: 2px);
+  @include radius;
+}
+
+.merchant-thumbnail {
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+article.scrollable {
+  max-height: 740px;
+  overflow: auto;
+}
+
+footer.footer {
+  color: white;
+}
+
+h1 {
+  font-family: 'Tangerine', cursive;
+  font-size: $h1-font-size*2;
+  color: $white;
+}
+
+.details-darling > h4 {
+  margin-top: 0.4em;
+}
+
+.translucent {
+  background-color: $translucent;
+}
+
+.details-darling > p {
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+h4 > a {
+  color: $body-font-color;
+}
+div.chunk {
+  color: rgba($body-font-color, 0.5);
+}
+
+div.chunk:hover{
+  background-color: scale-color($translucent, $alpha: 25%);
+  color: $body-font-color;
+}
+
+// Side filter buttons responsiveness
+.left-side-panel {
+  @include radius;
+  @media #{$large-up} {
+    border-top-left-radius: $global-radius;
+    border-bottom-left-radius: $global-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+aside.nopadding-right {
+  @media #{$large-up} {
+    padding-right: 0;
+  }
+}
+
+.left-border {
+  border-left: 1px solid #CCCCCC;
+}
+
+div.common-filters {
+  @include radius;
+  padding: rem-calc(20);
+  border: 1px solid #CCCCCC;
+  color: $white;
+  @media #{$large-up} {
+    border-right: 0;
+  }
+}
+
+// Switches with labels
+@mixin switch-basics($left-pos, $top-pos: 10px, $text-size: 14px) {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  left: $left-pos;
+  top: $top-pos;
+  font-size: $text-size;
+}
+.switch-on {
+  @include switch-basics(-76.7px, 10px, 13.7px);
+}
+
+.switch-off {
+  @include switch-basics(-34px);
+}
+
+.tiny-switch-on {
+  @include switch-basics(-44px, 5px, 8px);
+}
+
+.tiny-switch-off {
+  @include switch-basics(-20px, 5px, 9px);
+}
+
+// Baseline foundation styles
 @mixin twelve-columns {
   @extend .small-12;
   @extend .columns;
@@ -21,8 +123,6 @@
   @extend .columns;
   @extend .text-center;
   }
-// create your own classes
-// to make views framework-neutral
 .column {
   @include six-columns-centered;
   }
@@ -32,12 +132,6 @@
 .form-centered {
   @include six-columns-centered;
   }
-.submit {
-  @extend .button;
-  @extend .radius;
-  }
-// apply styles to HTML elements
-// to make views framework-neutral
 main {
   @include twelve-columns;
   }
