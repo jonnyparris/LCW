@@ -10,6 +10,8 @@ RSpec.describe Venue, :type => :model do
     it { should respond_to(:contact_details) }
     it { should respond_to(:size_details) }
     it { should respond_to(:photos) }
+    it { should respond_to(:children_friendly) }
+    it { should respond_to(:disabled_access) }
   end
 
   describe "associations" do
