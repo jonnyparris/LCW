@@ -68,6 +68,9 @@
         <div class="text-center">
           <input type="hidden" name="filter" value="true">
           <%= submit_tag "Filter", :class => "button radius", :disabled => false, :disable_with => "Filtering..." %>
+          <% if params[:filter] %>
+            <%= link_to "clear filter", root_path %>
+          <% end %>
         </div>
       <% end %>
     </div>
