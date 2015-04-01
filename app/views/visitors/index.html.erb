@@ -1,17 +1,22 @@
 <div class="small-centered columns">
   <h1>Welcome to Loudoun County Weddings</h1>
-  <!-- <h3 class="subheader">Your guide to all local wedding resources in the gorgeous Loudoun County</h3> -->
 </div>
 
 <div class="transparent">
   <aside class="large-2 columns nopadding-right">
     <ul class="side-nav">
       <% if user_signed_in? %>
+        <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Venues Admin', venues_path, class: "button left-side-panel" %></li>
+        <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Vendors Admin', vendors_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Venue', new_venue_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Vendor', new_vendor_path, class: "button left-side-panel" %></li>
       <% else %>
-        <li class="large-text-right small-text-center medium-text-center"><%= link_to("Venues", "#", class: "button left-side-panel") %></li>
-        <li class="text-right"><%= link_to("Vendors", "#", class: "button left-side-panel") %></li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Venues", "#", class: "button left-side-panel") %>
+        </li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Vendors", "#", class: "button left-side-panel") %>
+        </li>
       <% end %>
       <li class="large-text-right small-text-center medium-text-center">
         <div class="switch large">
@@ -24,51 +29,55 @@
       </li>
     </ul>
     <div class="common-filters left-side-panel">
-      <ul class="no-bullet">
-          <li>
-            Max: $
-            <span id="priceOutput"></span>
-            <div class="range-slider radius" data-slider data-options="start: 1; end: 1000; display_selector: #priceOutput;">
-              <span class="range-slider-handle" role="slider" tabindex="0"></span>
-              <span class="range-slider-active-segment"></span>
-              <input type="hidden">
-            </div>
-          </li>
-          <li>
-            <span id="capacityOutput"></span>
-            People
-            <div class="range-slider radius" data-slider data-options="start: 10; end: 500; display_selector: #capacityOutput;">
-              <span class="range-slider-handle" role="slider" tabindex="0"></span>
-              <span class="range-slider-active-segment"></span>
-              <input type="hidden">
-            </div>
-          </li>
-          <li class="text-center">
-            Disabled access?
-            <div class="switch tiny">
-              <input id="disabledSwitch" type="checkbox">
-              <label for="disabledSwitch">
-                <span class="tiny-switch-on">Yes</span>
-                <span class="tiny-switch-off">No</span>
-              </label>
-            </div>
-          </li>
-          <li class="text-center">
-            Child friendly?
-            <div class="switch tiny">
-              <input id="childSwitch" type="checkbox">
-              <label for="childSwitch">
-                <span class="tiny-switch-on">Yes</span>
-                <span class="tiny-switch-off">No</span>
-              </label>
-            </div>
-          </li>
-      </ul>
-      <div class="text-center">
-        <button class="button radius">
-          Filter >
-        </button>
-      </div>
+      <%= form_tag("/", method: :get) do %>
+        <ul class="no-bullet">
+            <li>
+              Max: $
+              <input type="number" name="max_price" id="priceOutput" value=<%= "#{params[:max_price]}"  %>>
+              <div class="range-slider radius" data-slider<%= "=#{params[:max_price]}" unless params[:max_price].nil?  %> data-options="start: 1; end: 1000; display_selector: #priceOutput;">
+                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                <span class="range-slider-active-segment"></span>
+                <input type="hidden">
+              </div>
+            </li>
+            <li>
+              Min Capacity:
+              <input type="number" name="min_capacity" id="capacityOutput" value=<%= "#{params[:min_capacity]}"  %>>
+              <div class="range-slider radius" data-slider<%= "=#{params[:min_capacity]}" unless params[:min_capacity].nil? %> data-options="start: 10; end: 500; display_selector: #capacityOutput;">
+                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                <span class="range-slider-active-segment"></span>
+                <input type="hidden">
+              </div>
+            </li>
+            <li class="text-center">
+              Disabled access?
+              <div class="switch tiny">
+                <input id="disabledSwitch" type="checkbox" name="disabled_access" <%= params[:disabled_access] ? "checked" : ""  %> >
+                <label for="disabledSwitch">
+                  <span class="tiny-switch-on">Yes</span>
+                  <span class="tiny-switch-off">No</span>
+                </label>
+              </div>
+            </li>
+            <li class="text-center">
+              Child friendly?
+              <div class="switch tiny">
+                <input id="childSwitch" type="checkbox" name="children_friendly" <%= params[:children_friendly] ? "checked" : ""  %> >
+                <label for="childSwitch">
+                  <span class="tiny-switch-on">Yes</span>
+                  <span class="tiny-switch-off">No</span>
+                </label>
+              </div>
+            </li>
+        </ul>
+        <div class="text-center">
+          <input type="hidden" name="filter" value="true">
+          <%= submit_tag "Filter", :class => "button radius", :disabled => false, :disable_with => "Filtering..." %>
+          <% if params[:filter] %>
+            <%= link_to "clear filter", root_path %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </aside>
 

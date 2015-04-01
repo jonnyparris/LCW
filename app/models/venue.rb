@@ -5,4 +5,11 @@ class Venue < ActiveRecord::Base
   has_and_belongs_to_many :preferred_vendors, class_name: "Vendor"
 
   mount_uploaders :photos, PhotoUploader
+
+  before_save :prepend_url
+
+  def prepend_url
+    return if self.website? && /^http/i.match(self.website)
+    self.website = "http://#{self.website}"
+  end
 end

@@ -9,6 +9,8 @@
     <%= f.input :description %>
     <%= f.input :size_details %>
     <%= f.input :directions %>
+    <%= f.input :children_friendly %>
+    <%= f.input :disabled_access %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.association :preferred_vendors, as: :check_boxes %>
   </div>

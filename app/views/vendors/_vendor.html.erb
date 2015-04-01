@@ -1,20 +1,25 @@
 <div class="columns chunk">
   <div class="large-4 column merchant-thumbnail">
     <% if vendor.photos? %>
-      <%= link_to(image_tag(vendor.photos.last.thumb.url), vendor_path(vendor)) %>
+      <%= link_to(image_tag(vendor.photos.last.thumb.url), "#") %>
     <% else %>
-      <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Z-sl7HLU7OJZ30S5FuNzC8sxYoWL9acyHQU0koc32SJv0qwB5Q"), vendor_path(vendor)) %>
+      <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Z-sl7HLU7OJZ30S5FuNzC8sxYoWL9acyHQU0koc32SJv0qwB5Q"), "#") %>
     <% end %>
   </div>
-  <div class="large-8 columns details-darling">
-    <h4><%= link_to(vendor.name, vendor_path(vendor)) %></h4>
-    <p><%= "Contact: #{vendor.contact_details}" if vendor.contact_details? %></p>
-    <% if vendor.website? %>
-        <p><%= link_to("website", "#{vendor.website}", target: "_blank") %></p>
-    <% end %>
-    <p><%= vendor.description if vendor.description? %></p>
-    <p><%= vendor.services if vendor.services? %></p>
-    <p><%= "Pricing: #{vendor.pricing}" if vendor.pricing? %></p>
+  <div class="large-8 columns details-darling vcard-rad">
+    <h4><%= link_to(vendor.name, "#") %></h4>
+    <ul>
+      <% if vendor.description? %>
+        <li><%= vendor.description %></li>
+        <br>
+      <% end %>
+      <li><%= vendor.services if vendor.services? %></li>
+      <li><%= "Pricing: #{vendor.pricing}" if vendor.pricing? %></li>
+      <li><%= "Contact: #{vendor.contact_details}" if vendor.contact_details? %></li>
+      <% if vendor.website? %>
+          <li><%= link_to("website", "#{vendor.website}", target: "_blank") %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 <hr>

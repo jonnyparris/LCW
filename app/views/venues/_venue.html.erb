@@ -1,15 +1,18 @@
 <div class="columns chunk">
   <div class="large-4 column merchant-thumbnail">
     <% if venue.photos? %>
-        <%= link_to(image_tag(venue.photos.last.thumb.url), venue_path(venue)) %>
+        <%= link_to(image_tag(venue.photos.last.thumb.url), "#") %>
     <% else %>
-        <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd"), venue_path(venue)) %>
+        <%= link_to(image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi9uue65sJQ6uxPih6bz7QeMFtzsavLFPIIH0896cz3wmRNsFd"), "#") %>
     <% end %>
   </div>
   <div class="large-8 columns details-darling vcard-rad">
-    <h4><%= link_to(venue.name, venue_path(venue)) %></h4>
+    <h4><%= link_to(venue.name, "#") %></h4>
     <ul>
-      <li><%= venue.description if venue.description? %></li>
+      <% if venue.description? %>
+        <li><%= venue.description %></li>
+        <br>
+      <% end %>
       <li><%= "Pricing: #{venue.pricing}" if venue.pricing? %></li>
       <li><%= "Capacity: #{venue.size_details}" if venue.size_details? %></li>
       <li><%= "Contact: #{venue.contact_details}" if venue.contact_details? %></li>
