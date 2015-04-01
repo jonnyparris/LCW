@@ -78,7 +78,9 @@ aside.nopadding-right {
 }
 
 .left-border {
-  border-left: 1px solid #CCCCCC;
+  @media #{$large-up} {
+    border-left: 1px solid #CCCCCC;
+  }
 }
 
 div.common-filters {
