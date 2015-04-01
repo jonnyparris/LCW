@@ -6,11 +6,17 @@
   <aside class="large-2 columns nopadding-right">
     <ul class="side-nav">
       <% if user_signed_in? %>
+        <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Venues Admin', venues_path, class: "button left-side-panel" %></li>
+        <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Vendors Admin', vendors_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Venue', new_venue_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Vendor', new_vendor_path, class: "button left-side-panel" %></li>
       <% else %>
-        <li class="large-text-right small-text-center medium-text-center"><%= link_to("Venues", "#", class: "button left-side-panel") %></li>
-        <li class="large-text-right small-text-center medium-text-center"><%= link_to("Vendors", "#", class: "button left-side-panel") %></li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Venues", "#", class: "button left-side-panel") %>
+        </li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Vendors", "#", class: "button left-side-panel") %>
+        </li>
       <% end %>
       <li class="large-text-right small-text-center medium-text-center">
         <div class="switch large">
