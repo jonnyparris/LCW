@@ -28,8 +28,8 @@
         <ul class="no-bullet">
             <li>
               Max: $
-              <input type="number" name="max_price" id="priceOutput" value="priceOutput">
-              <div class="range-slider radius" data-slider data-options="start: 1; end: 1000; display_selector: #priceOutput;">
+              <input type="number" name="max_price" id="priceOutput" value=<%= "#{params[:max_price]}"  %>>
+              <div class="range-slider radius" data-slider=<%= "#{params[:max_price]}"  %> data-options="start: 1; end: 1000; display_selector: #priceOutput;">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
                 <input type="hidden">
@@ -37,8 +37,8 @@
             </li>
             <li>
               Min Capacity:
-              <input type="number" name="min_capacity" id="capacityOutput" value="capacityOutput">
-              <div class="range-slider radius" data-slider data-options="start: 10; end: 500; display_selector: #capacityOutput;">
+              <input type="number" name="min_capacity" id="capacityOutput" value=<%= "#{params[:min_capacity]}"  %>>
+              <div class="range-slider radius" data-slider=<%= "#{params[:min_capacity]}"  %> data-options="start: 10; end: 500; display_selector: #capacityOutput;">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
                 <input type="hidden">
@@ -47,7 +47,7 @@
             <li class="text-center">
               Disabled access?
               <div class="switch tiny">
-                <input id="disabledSwitch" type="checkbox" name="disabled_access">
+                <input id="disabledSwitch" type="checkbox" name="disabled_access" <%= params[:disabled_access] ? "checked" : ""  %> >
                 <label for="disabledSwitch">
                   <span class="tiny-switch-on">Yes</span>
                   <span class="tiny-switch-off">No</span>
@@ -57,7 +57,7 @@
             <li class="text-center">
               Child friendly?
               <div class="switch tiny">
-                <input id="childSwitch" type="checkbox" name="children_friendly">
+                <input id="childSwitch" type="checkbox" name="children_friendly" <%= params[:children_friendly] ? "checked" : ""  %> >
                 <label for="childSwitch">
                   <span class="tiny-switch-on">Yes</span>
                   <span class="tiny-switch-off">No</span>
