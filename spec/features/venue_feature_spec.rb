@@ -1,5 +1,7 @@
 feature "Venues" do
-  scenario "should be creatable" do
+  scenario "should be creatable only for logged in users" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     visit venues_path
     click_link "Add Venue"
     fill_in "Name", with: "dummy venue"
