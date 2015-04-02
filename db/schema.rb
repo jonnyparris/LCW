@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150401153757) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.json     "photos"
-    t.boolean  "children_friendly"
-    t.boolean  "disabled_access"
+    t.boolean  "children_friendly", default: false
+    t.boolean  "disabled_access",   default: false
   end
 
 end
