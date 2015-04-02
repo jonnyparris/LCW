@@ -10,12 +10,27 @@
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Vendors Admin', vendors_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Venue', new_venue_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Vendor', new_vendor_path, class: "button left-side-panel" %></li>
-      <% else %>
+      <% end %>
+      <% if params[:vendors_only] %>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Venues", root_path(venues_only: true), class: "button left-side-panel") %>
+          <%= link_to("Venues only", root_path(venues_only: true), class: "button left-side-panel") %>
         </li>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Vendors", root_path(vendors_only: true), class: "button left-side-panel") %>
+          <%= link_to("All", root_path, class: "button left-side-panel") %>
+        </li>
+      <% elsif params[:venues_only] %>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("All", root_path, class: "button left-side-panel") %>
+        </li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Vendors only", root_path(vendors_only: true), class: "button left-side-panel") %>
+        </li>
+      <% else %>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Venues only", root_path(venues_only: true), class: "button left-side-panel") %>
+        </li>
+        <li class="large-text-right small-text-center medium-text-center">
+          <%= link_to("Vendors only", root_path(vendors_only: true), class: "button left-side-panel") %>
         </li>
       <% end %>
       <li class="large-text-right small-text-center medium-text-center">
