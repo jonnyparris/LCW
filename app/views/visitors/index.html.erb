@@ -12,10 +12,10 @@
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Vendor', new_vendor_path, class: "button left-side-panel" %></li>
       <% else %>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Venues", "#", class: "button left-side-panel") %>
+          <%= link_to("Venues", root_path(venues_only: true), class: "button left-side-panel") %>
         </li>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Vendors", "#", class: "button left-side-panel") %>
+          <%= link_to("Vendors", root_path(vendors_only: true), class: "button left-side-panel") %>
         </li>
       <% end %>
       <li class="large-text-right small-text-center medium-text-center">
@@ -71,6 +71,11 @@
             </li>
         </ul>
         <div class="text-center">
+          <% if params[:vendors_only] %>
+              <input type="hidden" name="vendors_only" value="true">
+          <% elsif params[:venues_only] %>
+              <input type="hidden" name="venues_only" value="true">
+          <% end %>
           <%= submit_tag "Filter", :class => "button radius", :disabled => false, :disable_with => "Filtering..." %>
           <% if params[:commit] == "Filter" %>
             <%= link_to "clear filter", root_path %>

@@ -12,11 +12,11 @@ class VisitorsController < ApplicationController
                               params[:max_price],
                               params[:min_capacity],
                               children_friendly,
-                              disabled_access)
+                              disabled_access) unless Venue.all.empty? || params[:vendors_only]
     else
-      @venues = Venue.includes(:preferred_vendors).all unless Venue.all.empty?
+      @venues = Venue.includes(:preferred_vendors).all unless Venue.all.empty? || params[:vendors_only]
     end
-    @vendors = Vendor.includes(:preferred_venues).all unless Vendor.all.empty?
+    @vendors = Vendor.includes(:preferred_venues).all unless Vendor.all.empty? || params[:venues_only]
   end
 
 end
