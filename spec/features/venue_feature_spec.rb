@@ -3,7 +3,7 @@ feature "Venues" do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit venues_path
-    click_link "Add Venue"
+    click_link "Add Single Venue"
     fill_in "Name", with: "dummy venue"
     fill_in "Contact", with: "dummy contacts"
     click_button "Create Venue"
