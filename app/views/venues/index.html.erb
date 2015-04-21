@@ -1,8 +1,19 @@
+<h1>All Venues</h1>
 <div class="row">
-  <h1>All Venues</h1>
-  <%= link_to 'Add Venue', new_venue_path, class: "button" %>
+  <ul class="small-10 columns small-centered inline-list">
+    <li><%= link_to 'Add Single Venue', new_venue_path, class: "button" %></li>
+    <li><%= link_to 'Export to CSV', venues_path(format: "csv"), class: "button" %></li>
+    <li>
+      <%= form_tag import_venues_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import from CSV", class: "button " %>
+      <% end %>
+    </li>
+  </ul>
+</div>
 
-  <table>
+<div class="row">
+  <table class="small-centered column">
     <thead>
       <tr>
         <th colspan="1">Venue Name</th>
@@ -15,7 +26,7 @@
         <tr>
           <td>
             <h3><%= venue.name %></h3>
-            <%= image_tag(venue.photos.first.url) if venue.photos? %>
+            <%= image_tag(venue.photos.first.thumb.url) if venue.photos? %>
           </td>
           <td><%= link_to 'Show', venue %></td>
           <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
