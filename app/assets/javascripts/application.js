@@ -20,6 +20,14 @@
 var ready;
 ready = function() {
   $(document).foundation();
+  $('#slide-price').on('change', function(){
+      var value = $(this).attr('data-slider');
+      $('#priceOutput').val(value);
+  });
+  $('#slide-ppl').on('change', function(){
+      var value = $(this).attr('data-slider');
+      $('#capacityOutput').val(value);
+  });
 };
 $(document).ready(ready);
 $(document).on('page:load', ready);
