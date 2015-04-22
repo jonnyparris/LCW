@@ -59,7 +59,7 @@ class Venue < ActiveRecord::Base
     "description",
     "pricing",
     "directions",
-    "website,",
+    "website",
     "contact_details",
     "size_details",
     "children_friendly",
