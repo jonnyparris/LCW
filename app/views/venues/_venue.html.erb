@@ -16,6 +16,7 @@
       <li><%= "Pricing: #{venue.pricing}" if venue.pricing? %></li>
       <li><%= "Capacity: #{venue.size_details}" if venue.size_details? %></li>
       <li><%= "Contact: #{venue.contact_details}" if venue.contact_details? %></li>
+      <li><%= "#{venue.address}" if venue.address? %></li>
       <% if venue.website? %>
         <li><%= link_to("Website", "#{venue.website}", target: "_blank") %></li>
       <% end %>
