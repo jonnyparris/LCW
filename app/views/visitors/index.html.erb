@@ -49,7 +49,7 @@
             <li>
               Max: $
               <input type="number" name="max_price" id="priceOutput" value=<%= "#{params[:max_price]}"  %>>
-              <div class="range-slider radius" data-slider<%= "=#{params[:max_price]}" unless params[:max_price].nil?  %> data-options="start: 1; end: 1000; display_selector: #priceOutput;">
+              <div class="range-slider radius" id="slide-price"data-slider<%= "=#{params[:max_price]}" unless params[:max_price].nil?  %> data-options="start: 1; end: 1000; display_selector: #priceOutput;">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
                 <input type="hidden">
@@ -58,7 +58,7 @@
             <li>
               Min Capacity:
               <input type="number" name="min_capacity" id="capacityOutput" value=<%= "#{params[:min_capacity]}"  %>>
-              <div class="range-slider radius" data-slider<%= "=#{params[:min_capacity]}" unless params[:min_capacity].nil? %> data-options="start: 10; end: 500; display_selector: #capacityOutput;">
+              <div class="range-slider radius" id="slide-ppl"data-slider<%= "=#{params[:min_capacity]}" unless params[:min_capacity].nil? %> data-options="start: 10; end: 500; display_selector: #capacityOutput;">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
                 <input type="hidden">
