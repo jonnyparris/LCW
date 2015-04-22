@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401153757) do
+ActiveRecord::Schema.define(version: 20150420170824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,12 @@ ActiveRecord::Schema.define(version: 20150401153757) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.json     "photos"
-    t.boolean  "children_friendly", default: false
-    t.boolean  "disabled_access",   default: false
+    t.boolean  "children_friendly",    default: false
+    t.boolean  "disabled_access",      default: false
+    t.string   "address"
+    t.string   "bad_weather_capacity"
+    t.string   "deposit"
+    t.string   "onsite_accommodation"
   end
 
 end

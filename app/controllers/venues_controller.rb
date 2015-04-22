@@ -5,7 +5,10 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-    respond_with(@venues)
+    respond_to do |format|
+      format.html { respond_with(@venues) }
+      format.csv  { send_data @venues.to_csv }
+    end
   end
 
   def show
@@ -34,6 +37,17 @@ class VenuesController < ApplicationController
   def destroy
     @venue.destroy
     respond_with(@venue)
+  end
+
+  def import
+    import_results = Venue.import(params[:file])
+    if import_results == "success"
+      redirect_to venues_path, notice: "Venues imported. No bad eggs"
+    elsif import_results[0] == "s"
+      redirect_to venues_path, alert: import_results
+    else
+      redirect_to venues_path, alert: "Nothing imported - did you select a file?"
+    end
   end
 
   private
