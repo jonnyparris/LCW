@@ -100,9 +100,21 @@
     </div>
   </aside>
 
-  <article class="left-border large-10 columns scrollable radius animated fadeInRight">
-    <%= render @venues unless @venues.nil? %>
-    <%= render @vendors unless @vendors.nil? %>
-  </article>
+  <div class="large-10 columns">
+    <div class="sorting clearfix">
+      <button class="small radius dropdown right" aria-controls="drop" aria-expanded="false" data-dropdown="drop">
+        Sort by
+      </button>
+      <ul id="drop" class="f-dropdown" aria-hidden="true" data-dropdown-content>
+        <li><%= link_to("name", params.merge(sort: "name")) %></li>
+        <li><%= link_to("price", params.merge(sort: "pricing")) %></li>
+        <li><%= link_to("capacity", params.merge(sort: "size_details")) %></li>
+      </ul>
+    </div>
+    <article class="left-border scrollable radius animated fadeInRight">
+      <%= render @venues unless @venues.nil? %>
+      <%= render @vendors unless @vendors.nil? %>
+    </article>
+  </div>
 
 </div>
