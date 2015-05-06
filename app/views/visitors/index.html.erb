@@ -106,9 +106,12 @@
         Sort by
       </button>
       <ul id="drop" class="f-dropdown" aria-hidden="true" data-dropdown-content>
-        <li><%= link_to("name", params.merge(sort: "name")) %></li>
-        <li><%= link_to("price", params.merge(sort: "pricing")) %></li>
-        <li><%= link_to("capacity", params.merge(sort: "size_details")) %></li>
+        <li><%= link_to("name A-Z", params.merge(sort: "name", sort_direction: "asc")) %></li>
+        <li><%= link_to("name Z-A", params.merge(sort: "name", sort_direction: "desc")) %></li>
+        <li><%= link_to("price low-high", params.merge(sort: "pricing", sort_direction: "asc")) %></li>
+        <li><%= link_to("price high-low", params.merge(sort: "pricing", sort_direction: "desc")) %></li>
+        <li><%= link_to("capacity low-high", params.merge(sort: "size_details", sort_direction: "asc")) %></li>
+        <li><%= link_to("capacity high-low", params.merge(sort: "size_details", sort_direction: "desc")) %></li>
       </ul>
     </div>
     <article class="left-border scrollable radius animated fadeInRight">
