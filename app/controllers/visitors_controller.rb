@@ -13,11 +13,11 @@ class VisitorsController < ApplicationController
                               params[:min_capacity],
                               children_friendly,
                               disabled_access)
-                              .order(sort_column + " " + sort_direction) unless Venue.all.empty? || params[:vendors_only]
+                              .order(sort_column + " " + sort_direction) unless Venue.all.empty? || params[:vendors_only] == "true"
     else
-      @venues = Venue.includes(:preferred_vendors).order(sort_column + " " + sort_direction) unless Venue.all.empty? || params[:vendors_only]
+      @venues = Venue.includes(:preferred_vendors).order(sort_column + " " + sort_direction) unless Venue.all.empty? || params[:vendors_only] == "true"
     end
-    @vendors = Vendor.includes(:preferred_venues) unless Vendor.all.empty? || params[:venues_only]
+    @vendors = Vendor.includes(:preferred_venues) unless Vendor.all.empty? || params[:venues_only] == "true"
   end
 
   private
