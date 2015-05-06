@@ -44,6 +44,22 @@ h1 {
   background-color: $translucent;
 }
 
+.sorting > button {
+  margin-top: 0.875rem;
+  @media #{$large-up} {
+    float: right;
+  }
+}
+
+.sorting {
+  @media #{$large-up} {
+    text-align: left;
+    ul {
+      text-align: left;
+    }
+  }
+}
+
 .details-darling > p {
   text-transform: uppercase;
   margin-bottom: 0.85rem;
