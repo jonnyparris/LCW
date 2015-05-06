@@ -11,26 +11,26 @@
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Venue', new_venue_path, class: "button left-side-panel" %></li>
         <li class="large-text-right small-text-center medium-text-center"><%= link_to 'Add Vendor', new_vendor_path, class: "button left-side-panel" %></li>
       <% end %>
-      <% if params[:vendors_only] %>
+      <% if params[:vendors_only] == "true" %>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Venues only", root_path(venues_only: true), class: "button left-side-panel") %>
+          <%= link_to("Venues only", params.merge(venues_only: true, vendors_only: false), class: "button left-side-panel") %>
         </li>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("All", root_path, class: "button left-side-panel") %>
+          <%= link_to("All", params.except(:venues_only, :vendors_only), class: "button left-side-panel") %>
         </li>
-      <% elsif params[:venues_only] %>
+      <% elsif params[:venues_only] == "true" %>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("All", root_path, class: "button left-side-panel") %>
+          <%= link_to("All", params.except(:venues_only, :vendors_only), class: "button left-side-panel") %>
         </li>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Vendors only", root_path(vendors_only: true), class: "button left-side-panel") %>
+          <%= link_to("Vendors only", params.merge(vendors_only: true, venues_only: false), class: "button left-side-panel") %>
         </li>
       <% else %>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Venues only", root_path(venues_only: true), class: "button left-side-panel") %>
+          <%= link_to("Venues only", params.merge(venues_only: true), class: "button left-side-panel") %>
         </li>
         <li class="large-text-right small-text-center medium-text-center">
-          <%= link_to("Vendors only", root_path(vendors_only: true), class: "button left-side-panel") %>
+          <%= link_to("Vendors only", params.merge(vendors_only: true), class: "button left-side-panel") %>
         </li>
       <% end %>
 <!--       <li class="large-text-right small-text-center medium-text-center">
@@ -49,7 +49,7 @@
             <li>
               Max: $
               <input type="number" name="max_price" id="priceOutput" value=<%= "#{params[:max_price]}"  %>>
-              <div class="range-slider radius" id="slide-price"data-slider<%= "=#{params[:max_price]}" unless params[:max_price].nil?  %> data-options="start: 1; end: 1000; display_selector: #priceOutput;">
+              <div class="range-slider radius" id="slide-price"data-slider<%= "=#{params[:max_price]}" unless params[:max_price].nil?  %> data-options="start: 1; end: 5000; display_selector: #priceOutput;">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
                 <input type="hidden">
@@ -93,16 +93,31 @@
           <% end %>
           <%= submit_tag "Filter", :class => "button radius", :disabled => false, :disable_with => "Filtering..." %>
           <% if params[:commit] == "Filter" %>
-            <%= link_to "clear filter", root_path %>
+            <%= link_to "clear filters", root_path %>
           <% end %>
         </div>
       <% end %>
     </div>
   </aside>
 
-  <article class="left-border large-10 columns scrollable radius animated fadeInRight">
-    <%= render @venues unless @venues.nil? %>
-    <%= render @vendors unless @vendors.nil? %>
-  </article>
+  <div class="large-10 columns">
+    <div class="sorting clearfix text-center small-centered column large-12">
+      <button class="small radius dropdown" aria-controls="drop" aria-expanded="false" data-dropdown="drop">
+        Sort by
+      </button>
+      <ul id="drop" class="f-dropdown" aria-hidden="true" data-dropdown-content>
+        <li><%= link_to("name A-Z", params.merge(sort: "name", sort_direction: "asc")) %></li>
+        <li><%= link_to("name Z-A", params.merge(sort: "name", sort_direction: "desc")) %></li>
+        <li><%= link_to("price low-high", params.merge(sort: "pricing", sort_direction: "asc")) %></li>
+        <li><%= link_to("price high-low", params.merge(sort: "pricing", sort_direction: "desc")) %></li>
+        <li><%= link_to("capacity low-high", params.merge(sort: "size_details", sort_direction: "asc")) %></li>
+        <li><%= link_to("capacity high-low", params.merge(sort: "size_details", sort_direction: "desc")) %></li>
+      </ul>
+    </div>
+    <article class="left-border scrollable radius animated fadeInRight">
+      <%= render @venues unless @venues.nil? %>
+      <%= render @vendors unless @vendors.nil? %>
+    </article>
+  </div>
 
 </div>
