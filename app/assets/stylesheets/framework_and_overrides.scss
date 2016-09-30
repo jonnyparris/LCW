@@ -29,13 +29,19 @@ article.scrollable {
 }
 
 footer.footer {
+  color: lightgrey;
   padding-top: 0.5em;
+  padding-bottom: 0.5em;
   background-color: white;
 }
 
 .header-nav {
   padding-top: 0.8em;
   background-color: white;
+
+  .subtle-link {
+    color: lightgrey;
+  }
 }
 
 h1 {
