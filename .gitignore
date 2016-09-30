@@ -83,3 +83,6 @@ pickle-email-*.html
 
 #ignore kitchen sink html
 /app/views/visitors/kitchen.html.erb
+
+# uploads
+/public/uploads

@@ -8,6 +8,11 @@ body {
   background-repeat: no-repeat;
 }
 
+main {
+  border-left: white 2px solid;
+  border-right: white 2px solid;
+}
+
 .merchant-thumbnail img {
   @include thumb($border-width: 2px);
   @include radius;
@@ -24,7 +29,13 @@ article.scrollable {
 }
 
 footer.footer {
-  color: white;
+  padding-top: 0.5em;
+  background-color: white;
+}
+
+.header-nav {
+  padding-top: 0.8em;
+  background-color: white;
 }
 
 h1 {
